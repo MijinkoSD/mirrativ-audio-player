@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import SeekBar from '@/templates/SeekBar.vue'
 import { computed, ref } from 'vue'
+import SeekWithLabel from '@/templates/SeekWithLabel.vue'
+// import { getPlayer } from '@/connect/audio'
 
 const _current = ref<number>(24)
 const current = computed({
@@ -11,11 +12,18 @@ const current = computed({
     _current.value = Math.round(value)
   }
 })
+
+const liveId = ref<string>('')
+
+// const playLive = () => {
+
+// }
 </script>
 
 <template>
   <p>Home View.</p>
-  <SeekBar class="seek-bar" v-for="i in 1" :key="i" :length="180" v-model:current="current" />
+  <input :value="liveId" placeholder="ライブID" />
+  <SeekWithLabel class="seek-bar" :length="180" v-model:current="current" />
 </template>
 
 <style scoped lang="scss">
