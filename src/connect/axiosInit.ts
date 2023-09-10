@@ -3,7 +3,7 @@ import { backendBaseUrl } from "./common";
 
 const axiosInstance = axios.create({
   baseURL: backendBaseUrl,
-  timeout: 1000,
+  timeout: 3000,
 });
 
 export default axiosInstance;
